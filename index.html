@@ -10,32 +10,32 @@
         div id="intro">
         <h1>Mission Type Two Diabetes</h1>
     <script>
-        <button type="button" onclick="alert('Hello world!')">Click Me!</button>
+      
     if(players==2){
-    function Player1(redPlayer)
-    //color red
-    function Player2(bluePlayer)
-    //color blue
+        function Player1(redPlayer)
+        //color red
+        function Player2(bluePlayer)
+        //color blue
     }
     
     if(players==3){
-    function Player1(redPlayer)
-    //color red
-    function Player2(bluePlayer)
-    //color blue
-    function Player3(greenPlayer)
-    //color green
+        function Player1(redPlayer)
+        //color red
+        function Player2(bluePlayer)
+        //color blue
+        function Player3(greenPlayer)
+        //color green
     }
 
     if(players==4){
-    function Player1(redPlayer)
-    //color red
-    function Player2(bluePlayer)
-    //color blue
-    function Player3(greenPlayer)
-    //color green
-    function Player4(yellowPlayer)
-    //color yellow
+        function Player1(redPlayer)
+        //color red
+        function Player2(bluePlayer)
+        //color blue
+        function Player3(greenPlayer)
+        //color green
+        function Player4(yellowPlayer)
+        //color yellow
     }
 
     function drawCardFromDeck(pickTopCardOfDeck){        
@@ -76,60 +76,79 @@
             function blue2(moveToClosestBlueTwoTimes)
         }
     }
+    
     function drawCardFromRiskDeck (pickTopCardOfRiskDeck){
-    if(risk1){
-        function risk1(movePlayerOfYourChoiceBackToTheStart)
-    }
-    if(risk2){
-        function risk2(moveFourBlueSpaces)
-    }
-    if(risk3){
-        function risk3(pickPlayerOfYourChoiceToMoveThreeUp)
-    }
-    if(risk4){
-        function risk4(moveToTheBridgeAndYouGetKilledByAlfredaAndYouAreNowOutOfTheGameForGood)
-    }
-    if(risk5){
-        function risk5(moveToTheNextThreePurples)
-    }
-    if(risk6){
-        function risk6(theNextBlueYouLandOnYouHaveToTurnIntoCottonCandyAndDie)
-    }
-    if(risk7){
-        function risk7(moveToTheNextThirdGreen)
-    }
-    if(risk8){
-        function risk8(headAllTheWayBackToTheRiverOfCaramel)
-    }
-    if(risk9){
-        function risk9(moveBackFiveSpaces)
-    }
-    if(risk10){
-        function risk10(moveUpTenSpaces)
-    }
-    if(risk11){
-        function risk11(pickSomeoneToLoseTheNextTwoTurns)
-    }
-    if(risk12){
-        function risk12(moveTenDown)
-    }
-    if(risk13){
-        function risk13(moveBackTwoSpaces)
-    }
-    if(risk14){
-        function risk14(moveToTheRiverOfCaramelAndYouMissYourTurn)
-    }
-    if(risk15){
-        function risk15(moveToTheNextThreePink)
-    }
-    if(risk16){
-        function risk16(chooseAnyPlayerToMoveFourSpacesBack)
-    }
-   function button
+        if(risk1){
+            function risk1(movePlayerOfYourChoiceBackToTheStart)
+        }
+        if(risk2){
+            function risk2(moveFourBlueSpaces)
+        }
+        if(risk3){
+            function risk3(pickPlayerOfYourChoiceToMoveThreeUp)
+        }
+        if(risk4){
+            function risk4(moveToTheBridgeAndYouGetKilledByAlfredaAndYouAreNowOutOfTheGameForGood)
+        }
+        if(risk5){
+            function risk5(moveToTheNextThreePurples)
+        }
+        if(risk6){
+            function risk6(theNextBlueYouLandOnYouHaveToTurnIntoCottonCandyAndDie)
+        }
+        if(risk7){
+            function risk7(moveToTheNextThirdGreen)
+        }
+        if(risk8){
+            function risk8(headAllTheWayBackToTheRiverOfCaramel)
+        }   
+        if(risk9){
+            function risk9(moveBackFiveSpaces)
+        }
+        if(risk10){
+            function risk10(moveUpTenSpaces)
+        }
+        if(risk11){
+            function risk11(pickSomeoneToLoseTheNextTwoTurns)
+        }
+        if(risk12){
+            function risk12(moveTenDown)
+        }
+        if(risk13){
+            function risk13(moveBackTwoSpaces)
+        }
+        if(risk14){
+            function risk14(moveToTheRiverOfCaramelAndYouMissYourTurn)
+        }
+        if(risk15){
+            function risk15(moveToTheNextThreePink)
+        }
+        if(risk16){
+            function risk16(chooseAnyPlayerToMoveFourSpacesBack)
+        }
+   
 }
+
 function winningCard(makeWinCardApperarOnScreen){
         ("Congrats! You made it to the end. You now die from diabetes. Thanks for playing! The End!")
     }
+
+    function makeButton(btnText, choices){
+        let button = document.createElement("button");
+    button.innerHTML = btnText;
+
+    buttonContainer.appendChild(button);
+
+    button.addEventListener ("click", function() {
+        history.push(choices);
+
+      showStory();
+      
+        
+    });
+}
+
+
 </script>
-<body/>
-<html/>
+</body>
+</html>

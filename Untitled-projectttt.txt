@@ -7,10 +7,8 @@
     <title>Mission Type 2 Diabetes</title>
 </head>
 <body>
-      <h1>🍫🎂🍰Mission Type Two Diabetes🍦🍩🍪</h1>
-      <h2>🍰Click Button Below To Start Game🍰</h2>
-
         
+        <h1>Mission Type Two Diabetes</h1>
     <script>
       
     if(players==2){

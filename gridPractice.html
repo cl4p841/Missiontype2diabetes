@@ -7,6 +7,12 @@
     <title>Document</title>
 </head>
 <body>
+
+
+        <div id="container">
+            </div>
+
+
 <script>
 
 
@@ -18,8 +24,8 @@ let cells = document.getElementsByClassName("cell");
 
 // Creates a default grid sized 16x16
 function defaultGrid() {
-    makeRows(16);
-    makeColumns(16);
+    makeRows(30);
+    makeColumns(20);
 }
 
 // Takes (rows, columns) input and makes a grid
@@ -43,12 +49,19 @@ function makeColumns(cellNum) {
     };
 };
 
-makeColumns();
-makeRows();
-
-
+defaultGrid()
 
 
 </script>
+
+<style>
+    .gridRow {
+    border: 10px solid black;
+}
+
+.cell {
+    border: 10px solid black;
+}
+    </style>
 </body>
 </html>

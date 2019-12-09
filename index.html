@@ -10,10 +10,21 @@
       <h1>🍫🎂🍰M I S S I O N *T Y P E  2*   D I A B E T E S🍦🍩🍪</h1>
       <h2>🍰Cₗᵢcₖ Bᵤₜₜₒₙ Bₑₗₒw ₜₒ ₛₜₐᵣₜ Gₐₘₑ🍰</h2>
             </div>
+<body><div align="center">
+            <button ="myFunction()">Begin Your Mission</button>
+
+            <p id="demo"></p>
+            
+          
 
         
     <script>
-    
+    let buttonContainer = document.getElementById("buttons");
+    let history = ["intro"];
+    const story = {
+        choices: ["Begin"]
+    }
+
     function makeButton(btnText, choices){
         let button = document.createElement("button");
     button.innerHTML = btnText;

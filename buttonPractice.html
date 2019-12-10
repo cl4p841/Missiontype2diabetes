@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Butterfingers</title>
+</head>
+<body style="background-color:floralwhite;">
+    <div id=>
+    <h1>Butterfingers: The Tale of a Young Squire</h1>   
+        <p>This tale is about a squire whose name is Scott.  Now, Scott qualifies for being a knight.  He is witty, courageous, and persevering; however, he has an affliction that still had him be a squire;  he has butterfingers.  For seven years, it seemed that Scott simply couldn’t overcome this curse that blocked his path to knighthood.  Lucky for him, he had a patient teacher, one who was the most valiant of the land, Sir Ivan.  When most of the knights turned Scott down because of his butterfingers, Sir Ivan was there, welcoming Scott as his squire.  When the other knights heard this, they were a bit confused, but they didn’t question Ivan’s decision.</p>
+    <div id="myDIV">
+    </div>
+</body>
+<div id="story">
+</div>
+<div id="buttons">
+</div>
+<script>
+    const story = {
+        intro: {
+        text: `hello`,
+        choices: [
+            ["play?", ""],
+            ["", ""]
+        ]
+    },
+    }
+let storyContainer = document.getElementById("story");
+let buttonContainer = document.getElementById("buttons");
+let history = ["intro"]
+function bazingaButton(btnText, choice){
+            let button = document.createElement("button");
+            button.innerHTML = btnText;
+            buttonContainer.appendChild(button);
+            button.addEventListener ("click", function() {
+                history.push(choice);
+                showStory();
+            });
+        }
+        function buildStory(text) {
+            let storyItem = document.createElement("p");
+            storyItem.innerText = text;
+            storyContainer.appendChild(storyItem);
+        }
+        function showStory(){
+            let currentPage = history[history.length - 1]; // set currentPage to last index of history array.
+            storyContainer.innerHTML = ""; // reset html
+            buttonContainer.innerHTML = ""; // reset buttons
+            
+            for(let page of history){ // build story text from items in history array
+                buildStory(story[page].text);
+            }
+            
+            for(let choice of story[currentPage].choices){ // build buttons from choices property of most recent story choice
+                bazingaButton(choice[0], choice[1])
+            }
+        }
+        showStory();
+        
+        
+        
+    </script>
+      
+</body>
+</html>

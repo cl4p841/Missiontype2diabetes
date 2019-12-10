@@ -24,8 +24,8 @@ let cells = document.getElementsByClassName("cell");
 
 // Creates a default grid sized 16x16
 function defaultGrid() {
-    makeRows(30);
-    makeColumns(20);
+    makeRows(100);
+    makeColumns(10);    
 }
 
 // Takes (rows, columns) input and makes a grid
@@ -35,6 +35,7 @@ function makeRows(rowNum) {
     for (r = 0; r < rowNum; r++) {
         let row = document.createElement("div");
         container.appendChild(row).className = "gridRow";
+    
     };
 };
 
@@ -56,11 +57,16 @@ defaultGrid()
 
 <style>
     .gridRow {
-    border: 10px solid black;
-}
+    background: red;
+    display: flex;
+
+}   
 
 .cell {
-    border: 10px solid black;
+    background: black;
+    border: solid 1px rgb(233, 229, 238);
+    height: 100px;
+    width: 100px;
 }
     </style>
 </body>

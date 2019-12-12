@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+        <div id="board">
+            </div>
+
+
+<script>
+
+
+// Sets important constants and variables
+
+//const container = document.getElementById("container");
+//let rows = document.getElementsByClassName("gridRow");
+//let cells = document.getElementsByClassName("cell");
+
+// Creates a default grid sized 16x16
+// function defaultGrid() {
+//     makeRows(23);
+//     makeColumns(23);    
+// }
+
+// Takes (rows, columns) input and makes a grid
+// function makeRows(rowNum) {
+
+//     // Creates rows
+//     for (r = 0; r < rowNum; r++) {
+//         let row = document.createElement("div");
+//         container.appendChild(row).className = "gridRow";
+    
+//     };
+// };
+
+// Creates columns
+/*function makeColumns(cellNum) {
+    for (i = 0; i < rows.length; i++) {
+        for (j = 0; j < cellNum; j++) {
+            let newCell = document.createElement("div");
+            rows[j].appendChild(newCell).className = "cell";
+
+
+             switch(colorIndex){
+                case 0: 
+                    rows[j].appendChild(newCell).className = "blackSpace";
+                case 1: 
+                    rows[j].appendChild(newCell).className = "pinkSpace";
+                case 2: 
+                    rows[j].appendChild(newCell).className = "orangeSpace";
+                case 3: 
+                    rows[j].appendChild(newCell).className = "yellowSpace";
+                case 4: 
+                    rows[j].appendChild(newCell).className = "purpleSpace";
+                case 5: 
+                    rows[j].appendChild(newCell).className = "greenSpace";
+                case 6: 
+                    rows[j].appendChild(newCell).className = "blueSpace";
+             };
+        };
+    };
+};
+*/
+//defaultGrid()
+
+
+</script>
+
+
+
+<style>
+    #board {
+        display: flex;
+        flex-wrap: wrap;
+        width: 2024px;
+    }
+
+
+    .gridRow {
+        display: flex;
+        height: 44.5px;
+        width: 2023px;
+
+    }   
+
+    #board > div {
+        border: solid 1px rgb(255, 255, 255);
+        height: 44px;
+        width: 88px;
+        box-sizing: border-box;
+    }
+
+    #board > div.blackSpace {
+        background-color: white;
+    }
+
+    #board > div.pinkSpace {
+        background-color: pink;
+    }
+
+    #board > div.orangeSpace {
+        background-color: orange;
+    }
+
+    #board > div.yellowSpace {
+        background-color: yellow;
+    }
+
+    #board > div.purpleSpace {
+        background-color: purple;
+    }
+
+    #board > div.greenSpace {
+        background-color: green;
+    }
+
+    #board > div.blueSpace {
+        background-color: blue;
+    }
+
+</style>
+
+
+
+
+<script>
+
+const colors = {
+    black: 0,
+    pink: 1,
+    orange: 2,
+    yellow: 3,
+    purple: 4,
+    green: 5,
+    blue: 6,
+}
+   
+const boardElem = document.getElementById("board");
+const board =[
+ [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,], //1
+ [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,], //2
+ [0, 0, 0, 3, 2, 1, 0, 4, 1, 5, 6, 3, 2, 4, 0, 0, 0, 0, 1, 6, 3, 0, 0,], //3
+ [0, 0, 0, 0, 0, 5, 6, 2, 0, 0, 0, 0, 0, 5, 1, 6, 2, 4, 5, 0, 2, 0, 0,], //4
+ [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0,], //5
+ [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0,], //6
+ [0, 0, 0, 5, 4, 2, 6, 0, 0, 0, 5, 4, 2, 6, 3, 1, 5, 4, 2, 6, 1, 0, 0,], //7
+ [0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,], //8
+ [0, 4, 2, 6, 0, 0, 5, 3, 4, 2, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,], //9
+ [0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 1, 5, 0, 0, 0, 0, 0, 0, 0,], //10
+ [0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 6, 0, 0, 0, 0, 0, 0, 0,], //11
+ [0, 1, 6, 2, 4, 1, 5, 6, 3, 2, 4, 1, 5, 6, 0, 3, 0, 5, 6, 2, 4, 0, 0,], //12
+ [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 4, 1, 0, 0, 1, 0, 0,], //13
+ [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0,], //14
+ [0, 0, 5, 3, 6, 1, 2, 5, 4, 1, 2, 5, 3, 4, 1, 0, 0, 0, 0, 0, 6, 0, 0,], //15
+ [0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 6, 5, 1, 4, 2, 3, 0, 0,], //16 
+ [0, 0, 2, 1, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,], //17
+ [0, 0, 0, 0, 5, 4, 2, 3, 1, 6, 5, 4, 2, 1, 6, 3, 5, 4, 2, 1, 0, 0, 0,], //18
+ [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 6, 5, 0,], //19
+ [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0,], //20
+ [0, 0, 0, 1, 2, 3, 4, 5, 6, 1, 4, 6, 2, 5, 3, 1, 6, 4, 2, 5, 3, 1, 0,], //21
+ [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,], //22
+ [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,], //23
+]
+
+for(row of board){
+    for(col of row){
+        createSpace(col)
+    }
+}
+function createSpace(colorIndex){
+    let newCell = document.createElement("div");
+
+
+             switch(colorIndex){
+                case 0: 
+                    boardElem.appendChild(newCell).className = "blackSpace";
+                        break;
+                case 1: 
+                    boardElem.appendChild(newCell).className = "pinkSpace";
+                        break;
+                case 2: 
+                    boardElem.appendChild(newCell).className = "orangeSpace";
+                        break; 
+                case 3: 
+                    boardElem.appendChild(newCell).className = "yellowSpace";
+                        break;
+                case 4: 
+                    boardElem.appendChild(newCell).className = "purpleSpace";
+                        break;
+                case 5: 
+                    boardElem.appendChild(newCell).className = "greenSpace";
+                        break;
+                case 6: 
+                    boardElem.appendChild(newCell).className = "blueSpace";
+                        break;
+             };
+}
+
+
+
+
+
+</script>
+
+</body>
+</html>

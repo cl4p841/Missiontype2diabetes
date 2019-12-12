@@ -9,7 +9,7 @@
 <body>
 
 
-        <div id="container">
+        <div id="board">
             </div>
 
 
@@ -18,74 +18,93 @@
 
 // Sets important constants and variables
 
-const container = document.getElementById("container");
-let rows = document.getElementsByClassName("gridRow");
-let cells = document.getElementsByClassName("cell");
+//const container = document.getElementById("container");
+//let rows = document.getElementsByClassName("gridRow");
+//let cells = document.getElementsByClassName("cell");
 
 // Creates a default grid sized 16x16
-function defaultGrid() {
-    makeRows(23);
-    makeColumns(23);    
-}
+// function defaultGrid() {
+//     makeRows(23);
+//     makeColumns(23);    
+// }
 
 // Takes (rows, columns) input and makes a grid
-function makeRows(rowNum) {
+// function makeRows(rowNum) {
 
-    // Creates rows
-    for (r = 0; r < rowNum; r++) {
-        let row = document.createElement("div");
-        container.appendChild(row).className = "gridRow";
+//     // Creates rows
+//     for (r = 0; r < rowNum; r++) {
+//         let row = document.createElement("div");
+//         container.appendChild(row).className = "gridRow";
     
-    };
-};
+//     };
+// };
 
 // Creates columns
-function makeColumns(cellNum) {
+/*function makeColumns(cellNum) {
     for (i = 0; i < rows.length; i++) {
         for (j = 0; j < cellNum; j++) {
             let newCell = document.createElement("div");
             rows[j].appendChild(newCell).className = "cell";
-        };
 
+
+             switch(colorIndex){
+                case 0: 
+                    rows[j].appendChild(newCell).className = "blackSpace";
+                case 1: 
+                    rows[j].appendChild(newCell).className = "pinkSpace";
+                case 2: 
+                    rows[j].appendChild(newCell).className = "orangeSpace";
+                case 3: 
+                    rows[j].appendChild(newCell).className = "yellowSpace";
+                case 4: 
+                    rows[j].appendChild(newCell).className = "purpleSpace";
+                case 5: 
+                    rows[j].appendChild(newCell).className = "greenSpace";
+                case 6: 
+                    rows[j].appendChild(newCell).className = "blueSpace";
+             };
+        };
     };
 };
-
-defaultGrid()
+*/
+//defaultGrid()
 
 
 </script>
 
+
+
 <style>
     .gridRow {
-    display: flex;
-    height: 44.5px;
-    width: 2023px;
+        display: flex;
+        height: 44.5px;
+        width: 2023px;
 
-}   
+    }   
 
-.cell {
-    background: black;
-    border: solid 1px rgb(114, 48, 194);
-    height: 44px;
-    width: 100px;
-}
+    #board > div {
+        border: solid 1px rgb(114, 48, 194);
+        height: 44px;
+        width: 100px;
+    }
+</style>
 
-    </style>
+
 
 
 <script>
 
 const colors = {
+    black: 0,
     pink: 1,
     orange: 2,
     yellow: 3,
     purple: 4,
     green: 5,
     blue: 6,
-    black: 0,
 }
    
-  
+const boardElem = document.getElementById("board");
 const board =[
  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,], //1
  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,], //2
@@ -113,13 +132,33 @@ const board =[
 ]
 
 for(row of board){
-    for(col of board){
-        createSpace(x)
+    console.log("")
+    for(col of row){
+        createSpace(col)
     }
 }
 function createSpace(colorIndex){
-    switch(colorIndex){
-        
+    let newCell = document.createElement("div");
+
+
+             switch(colorIndex){
+                case 0: 
+                    boardElem.appendChild(newCell).className = "blackSpace";
+                case 1: 
+                    boardElem.appendChild(newCell).className = "pinkSpace";
+                case 2: 
+                    boardElem.appendChild(newCell).className = "orangeSpace";
+                case 3: 
+                    boardElem.appendChild(newCell).className = "yellowSpace";
+                case 4: 
+                    boardElem.appendChild(newCell).className = "purpleSpace";
+                case 5: 
+                    boardElem.appendChild(newCell).className = "greenSpace";
+                case 6: 
+                    boardElem.appendChild(newCell).className = "blueSpace";
+             };
+}
+
 
 
 

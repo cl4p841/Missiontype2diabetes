@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Deck of cards</title>
+</head>
+<body>
+<script>
+    var deck = new array();
+    var color = ["pink", "orange", "yellow" , "purple" , "green" , "blue"];
+    var values = ["single", "double"];
+
+    function getDeck()
+{
+	var deck = new Array();
+
+	for(var i = 0; i < color.length; i++)
+	{
+		for(var x = 0; x < values.length; x++)
+		{
+			var card = {Value: values[x], color: colors[i]};
+			deck.push(card);
+		}
+	}
+
+	return deck;
+}
+
+function shuffle()
+{
+	// for 1000 turns
+	// switch the values of two random cards
+	for (var i = 0; i < 1000; i++)
+	{
+		var location1 = Math.floor((Math.random() * deck.length));
+		var location2 = Math.floor((Math.random() * deck.length));
+		var tmp = deck[location1];
+
+		deck[location1] = deck[location2];
+		deck[location2] = tmp;
+	}
+}
+
+function renderDeck()
+{
+      document.getElementById("deck").innerHTML = "";
+
+	for(let i = 0; i < deck.length; i++)
+	{
+		let card = document.createElement("div");
+		let value = document.createElement("div");
+		let color = document.createElement("div");
+		card.className = "card";
+		value.className = "value";
+		color.className = "color " + deck[i].color;
+
+		value.innerHTML = deck[i].Value;
+		card.appendChild(value);
+		card.appendChild(color);
+
+		document.getElementById("deck").appendChild(card);
+	}
+}
+
+function renderDeck(pickTopCardOfDeck){        
+        if(pink1){
+            function pink1(moveToClosestPink)
+        }
+        if(orange1){
+            function orange1(moveToClosestOrange)
+        }
+        if(yellow1){
+            function yellow1(moveToClosestYellow)
+        }
+        if(purple1){
+            function purple1(moveToClosestPurple)
+        }
+        if(green1){
+            function green1(moveToClosestGreen)
+        }
+        if(blue1){
+            function blue1(moveToClosestBlue)
+        }
+        if(pink2){
+            function pink2(moveToTheClosestPinkTwoTimes)
+        }
+        if(orange2){
+            function orange2(moveToTheClosestOrangeTwoTimes)
+        }
+        if(yellow2){
+            function yellow2(moveToClosestYellowTwoTimes)
+        }
+        if(purple2){
+            function purple2(moveToClosestPurpleTwoTimes)
+        }
+        if(green2){
+            function green2(moveToTheClosestGreenTwoTimes)
+        }
+        if(blue2){
+            function blue2(moveToClosestBlueTwoTimes)
+        }
+    }
+
+
+
+</script>
+</body>
+</html>

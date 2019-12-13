@@ -8,26 +8,26 @@
 </head>
 <body>
 <script>
-    var deck = new array();
-    var color = ["pink", "orange", "yellow" , "purple" , "green" , "blue"];
-    var values = ["single", "double"];
+    var deck = new Array();
+var suits = ["single", "double"];
+var values = ["pink", "orange", "yellow" , "purple" , "green" , "blue"];
 
-    function getDeck()
+function getDeck()
 {
 	var deck = new Array();
 
-	for(var i = 0; i < color.length; i++)
+	for(var i = 0; i < suits.length; i++)
 	{
 		for(var x = 0; x < values.length; x++)
 		{
-			var card = {Value: values[x], color: colors[i]};
+			var card = {Value: values[x], Suit: suits[i]};
 			deck.push(card);
 		}
 	}
 
 	return deck;
-}
-
+}    
+    
 function shuffle()
 {
 	// for 1000 turns
@@ -41,8 +41,8 @@ function shuffle()
 		deck[location1] = deck[location2];
 		deck[location2] = tmp;
 	}
-}
-
+}    
+   
 function renderDeck()
 {
       document.getElementById("deck").innerHTML = "";
@@ -51,14 +51,14 @@ function renderDeck()
 	{
 		let card = document.createElement("div");
 		let value = document.createElement("div");
-		let color = document.createElement("div");
+		let suit = document.createElement("div");
 		card.className = "card";
 		value.className = "value";
-		color.className = "color " + deck[i].color;
+		suit.className = "suit " + deck[i].Suit;
 
 		value.innerHTML = deck[i].Value;
 		card.appendChild(value);
-		card.appendChild(color);
+		card.appendChild(suit);
 
 		document.getElementById("deck").appendChild(card);
 	}

@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-
+    <img id="myImg" src="https://www.sweetandsavorybyshinee.com/wp-content/uploads/2015/07/Lemon-Raspberry-Tartlets-2-600x900.jpg" alt="icecream" width="200" height="200">
 
         <div id="board">
             </div>
@@ -139,7 +139,6 @@ const colors = {
     green: 5,
     blue: 6,
 }
-   
 const boardElem = document.getElementById("board");
 const board =[
  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,], //1
@@ -166,7 +165,6 @@ const board =[
  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,], //22
  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,], //23
 ]
-
 for(row of board){
     for(col of row){
         createSpace(col)
@@ -200,6 +198,7 @@ function createSpace(colorIndex){
                         break;
              };
 }
+   
 
 
 

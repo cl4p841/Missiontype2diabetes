@@ -9,97 +9,6 @@
 <body>
 <script>
 
-  /*
-    class Deck {
-  constructor() {
-    this.deck = [];
-
-    const suits = ["Pink", "Blue", "Yellow", "Purple", "Orange", "Green"];
-    const values = ["Single", "Double"];
-
-    for (let suit in suits) {
-      for (let value in values) {
-        this.deck.push(`${values[value]} of ${suits[suit]}`);
-      }
-    }
-  }
-
-  shuffle(){
-    const { deck } = this;
-    let m = deck.length, i;
-
-    while(m){
-      i = Math.floor(Math.random() * m--);
-
-      [deck[m], deck[i]] = [deck[i], deck[m]];
-    }
-
-    return this;
-  }
-
-  deal(){
-    return this.deck.pop();
-  }
-}
-
-const deck1 = new Deck();
-deck1.shuffle()
-console.log(deck1.deck);
-deck1.deal()
-console.log(deck1.deck);
-*/
-
-<div>
-  <button id="drawbtn">DRAW A CARD</button>
-</div>
-
-<div class="card template">
-  <span class="rank">10</span>
-  <span class="suit">Hearts</span>
-</div>
-
-
-</script>
-
-
-
-
-
-
-<style>
-
-.card {
-  display:inline-block;
-  text-align:center;
-  margin:5px;
-  padding:18px 15px 0 15px;
-  width:70px;
-  height:40px;
-  
-  font-size:22px;
-  background-color:#999999;
-  border: solid 1px black;
-}
-
-.red {
-  background-color:#E55451;
-  border: solid 1px #8C001A;
-  color:#8C001A;
-}
-
-.template {
-  display:none;
-}
-
-</style>
-
-
-
-
-
-
-<script>
-
 var suits = [ "hearts", "diams", "clubs", "spades" ];
 var ranks = [ 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K", "A" ];
 
@@ -172,9 +81,6 @@ function makeCard( suit, rank ) {
   
   $("body").append(card);
 }
-
-
-
 
 </script>
 </body>

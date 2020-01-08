@@ -10,7 +10,7 @@
 <script>
 
 
-class Deck(){
+class deck{
   constructor(){
     this.deck=[]
     this.dealt_cards=[]
@@ -23,12 +23,12 @@ class Deck(){
 
       return {name:this.name, suit:this.suit, value:this.value}
     }
-    let values = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
-    let suits = ['Clubs', 'Diamonds', 'Spades', 'Hearts']
+    let value = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
+    let suit = ['Clubs', 'Diamonds', 'Spades', 'Hearts']
 
-    for (let s = 0; s < suits.length; s++){ 
+    for (let s = 0; s < suit.length; s++){ 
       for (let v = 0; v < value.length; v++){
-        this.deck.push(card(suits[s], values[v]))
+        this.deck.push(card(suit[s], value[v]))
        }
       }
   }

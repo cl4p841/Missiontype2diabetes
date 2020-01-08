@@ -9,79 +9,73 @@
 <body>
 <script>
 
-var suits = [ "hearts", "diams", "clubs", "spades" ];
-var ranks = [ 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K", "A" ];
 
-var deck = [];
+class Deck(){
+  constructor(){
+    this.deck=[]
+    this.dealt_cards=[]
+  }
+  generate_deck(){
+    let card = (suit, value) => {
+      this.name = value + ' of ' + suit
+      this.suit = suit 
+      this.value = value
 
-$(init);
-
-function init() {
-  makeDeck();
-  
-  $("#drawbtn").click( function() {
-    
-    var myCard = drawCard();
-    
-    if( myCard ) {
-      makeCard( myCard.suit, myCard.rank );
-    } else {
-      alert("no more cards in the deck");
+      return {name:this.name, suit:this.suit, value:this.value}
     }
-    
-  });
-  
-}
+    let values = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
+    let suits = ['Clubs', 'Diamonds', 'Spades', 'Hearts']
 
-function makeDeck() {
-  
-  deck = [];
-  //for each type of suit
-  for( var i = 0; i < suits.length; i++ ) {
-    //and for each rank
-    for( var j = 0; j < ranks.length; j++ ) {
-      
-      //make a card
-      var card = {};
-      card.suit = suits[i];
-      card.rank = ranks[j];
-      
-      deck.push(card);
+    for (let s = 0; s < suits.length; s++){ 
+      for (let v = 0; v < value.length; v++){
+        this.deck.push(card(suits[s], values[v]))
+       }
+      }
+  }
+
+print_deck(){
+  if(this.deck.length == 0){
+    console.log('The deck has been generated')
+  }else{ 
+    for(let c = 0; c < this.deck.length; c++){ 
+      console.log(this.deck[c])
     }
   }
-  
-  console.log( "MADE A NEW DECK OF ", deck.length, " CARDS" );
-  console.log( deck );
 }
 
-function drawCard() {
-  
-  var card;
-  
-  if( deck.length > 0 ) {
-    
-    var randIndex = Math.floor( Math.random() * deck.length );
-    card = deck.splice( randIndex, 1 )[0];
+shuffle(){
+  let current_ind = this.deck.length, temp_val, rand_ind
+
+  while (0 != current_ind){
+    rand_ind = Math.floor(Math.random() * current_ind)
+    current_ind -= 1
+    temp_val = this.deck[current_ind]
+    this.deck[current_ind] = this.deck[rand_ind]
+    this.deck[rand_ind] = temp_val
+    }
   }
-  
-  return card;
+
+  deal(){
+    let dealt_card = this.deck.shift()
+    this.dealt_cards.push(dealt_card)
+    return dealt_card
+  }
+
+  replace(){
+    this.deck.unshift(this.dealt_cards.shift())
+  }
+
 }
 
-function makeCard( suit, rank ) {
-  var card = $(".card.template").clone();
-  
-  card.removeClass("template");
-  
-  card.find(".rank").html(rank);
-  card.find(".suit").html("&"+suit+";");
-  
-  if( suit === "hearts" || suit === "diams" ) {
-    card.addClass("red");
-  }
-  
-  $("body").append(card);
-}
+deck = new deck()
+
+deck.generate_deck();
+deck.shuffle();
+deck.print_deck();
+
+console.log(deck.deal())
 
 </script>
+
 </body>
 </html>

@@ -78,46 +78,70 @@ console.log(deck.deal())
 
 
 
+let rndItem = a=> a[rnd()*a.length|0];
+let rnd = ()=> crypto.getRandomValues(new Uint32Array(1))[0]/2**32;
 
+var myArray = ['pink', 'Orange', 'Yellow', 'Green', 'Blue', 'Purple', 'Pink Pink', 'Orange Orange', 'Yellow Yellow', 'Green Green', 'Blue Blue', 'Purple'];
 
+ var item = rndItem(myArray)
+console.log(item)
 
 
 if (item == "pink"){ 
-  document.write("Yay, you got pink")
+  document.write("You drew a single pink card")
 }
 else if (item == "Orange"){ 
-  document.write("Yay, you got orange")
+  document.write("You drew a single orange card")
 }
 else if (item == "Yellow"){ 
-  document.write("Yay, you got yellow")
+  document.write("You drew a single yellow card")
 }
 else if (item == "Green"){ 
-  document.write("Yay, you got green")
+  document.write("You drew a single green card")
 }
 else if (item == "Blue"){ 
-  document.write("Yay, you got blue")
+  document.write("You drew a single blue card")
 }
 else if (item == "Purple"){ 
-  document.write("Yay, you got purple")
+  document.write("You drew a single purple card")
 }
 else if (item == "Pink Pink"){ 
-  document.write("Yay, you got double pink")
+  document.write("You drew a double pink card")
 }
 else if (item == "Orange Orange"){ 
-  document.write("Yay, you got double orange")
+  document.write("You drew a double orange card")
 }
 else if (item == "Yellow Yellow"){ 
-  document.write("Yay, you got double yellow")
+  document.write("You drew a double yellow card")
 }
 else if (item == "Green Green"){ 
-  document.write("Yay, you got double green")
+  document.write("You drew a double green card")
 }
 else if (item == "blue Blue"){ 
-  document.write("Yay, you got double blue")
+  document.write("You drew a double blue card")
 }
 else if (item == "Purple Purple"){ 
-  document.write("Yay, you got double purple")
+  document.write("You drew a double purple card")
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </script>
 
 

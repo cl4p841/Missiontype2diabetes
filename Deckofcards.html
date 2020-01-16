@@ -7,6 +7,13 @@
     <title>Deck of cards</title>
 </head>
 <body>
+
+
+<div id="item">
+   <button onclick="getCard(myArray)">Draw A Card</button>
+
+</div>
+
 <script>
 /*
 
@@ -78,12 +85,80 @@ console.log(deck.deal())
 
 
 
+let rndItem = a=> a[rnd()*a.length|0];
+let rnd = ()=> crypto.getRandomValues(new Uint32Array(1))[0]/2**32;
+
+var myArray = ['pink', 'Orange', 'Yellow', 'Green', 'Blue', 'Purple', 'Pink Pink', 'Orange Orange', 'Yellow Yellow', 'Green Green', 'Blue Blue', 'Purple'];
 
 
 
 
+
+function getCard(myArray){
+  var item = rndItem(myArray)
+
+  let target = document.getElementById("item");
+
+
+  if (item == "pink"){ 
+    target.innerText = "You drew a single pink card";
+  }
+  else if (item == "Orange"){ 
+    target.innerText = "You drew a single orange card"
+  }
+  else if (item == "Yellow"){ 
+    target.innerText = "You drew a single yellow card"
+  }
+  else if (item == "Green"){ 
+    target.innerText = "You drew a single green card"
+  }
+  else if (item == "Blue"){ 
+    target.innerText = "You drew a single blue card"
+  }
+  else if (item == "Purple"){ 
+    target.innerText = "You drew a single purple card"
+  }
+  else if (item == "Pink Pink"){ 
+    target.innerText = "You drew a double pink card"
+  }
+  else if (item == "Orange Orange"){ 
+    target.innerText = "You drew a double orange card"
+  }
+  else if (item == "Yellow Yellow"){ 
+    target.innerText = "You drew a double yellow card"
+  }
+  else if (item == "Green Green"){ 
+    target.innerText = "You drew a double green card"
+  }
+  else if (item == "Blue Blue"){ 
+    target.innerText = "You drew a double blue card"
+  }
+  else if (item == "Purple Purple"){ 
+    target.innerText = "You drew a double purple card"
+  }
+}
 
 </script>
+
+<style>
+
+
+
+#item { position: absolute; visibility: visible; left: 1800px; top: 400px; z-index: 200; }
+
+
+
+
+
+</style>
+
+
+
+
+
+
+
+
 
 </body>
 </html>
